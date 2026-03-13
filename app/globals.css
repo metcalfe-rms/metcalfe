@@ -1,26 +1,75 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --color-gold: #C49A28;
+  --color-gold-light: #D4AA3A;
+  --color-gold-dark: #A0821E;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #f6f7f9;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --sidebar: #ffffff;
+  --sidebar-border: #e2e8f0;
+  --border: #e2e8f0;
+  --primary: #C49A28;
+  --primary-foreground: #ffffff;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
 }
 
+.dark {
+  --background: #101827;
+  --foreground: #f1f5f9;
+  --card: #111827;
+  --sidebar: #0a1020;
+  --sidebar-border: #1e2a3d;
+  --border: #1e2a3d;
+  --primary: #C49A28;
+  --primary-foreground: #ffffff;
+  --muted: #1e2a3d;
+  --muted-foreground: #94a3b8;
+}
+
+* { box-sizing: border-box; border-color: var(--border); }
+html { color-scheme: dark; }
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.camera-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 50%);
+}
+.camera-overlay-top {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%);
+}
+
+.glass {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.live-badge {
+  animation: livePulse 2s ease-in-out infinite;
+}
+@keyframes livePulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
 }
