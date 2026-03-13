@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Simplified Metcalfe M logo mark in gold/dark -->
+  <g>
+    <!-- Left large petal -->
+    <path d="M10,80 Q10,20 25,20 Q15,50 20,80 Z" fill="#C49A28"/>
+    <!-- Left small petal -->
+    <path d="M22,80 Q18,40 28,35 Q35,50 30,80 Z" fill="#A07E20"/>
+    <!-- Center petal -->
+    <path d="M38,80 Q40,45 50,40 Q60,45 62,80 Z" fill="#808080"/>
+    <!-- Right small petal -->
+    <path d="M70,80 Q65,50 72,35 Q82,40 78,80 Z" fill="#606060"/>
+    <!-- Right large petal -->
+    <path d="M80,80 Q85,50 75,20 Q90,20 90,80 Z" fill="#303030"/>
+  </g>
+</svg>
