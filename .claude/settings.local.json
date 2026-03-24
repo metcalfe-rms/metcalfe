@@ -1,0 +1,211 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "claude-sonnet-4-20250514",
+  "maxTokens": 8192,
+
+  "permissions": {
+    "allow": [
+      "Read",
+      "Write",
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(yarn *)",
+      "Bash(pnpm *)",
+      "Bash(bun *)",
+      "Bash(node *)",
+      "Bash(npx *)",
+      "Bash(python *)",
+      "Bash(pip *)",
+      "Bash(ls *)",
+      "Bash(find *)",
+      "Bash(grep *)",
+      "Bash(cat *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(mkdir *)",
+      "Bash(rm -rf node_modules)",
+      "Read(~/.zshrc)",
+      "Read(~/.bashrc)",
+      "Read(~/.bash_profile)",
+      "Read(./package.json)",
+      "Read(./tsconfig.json)",
+      "Read(./.env.example)"
+    ],
+    "deny": [
+      "Bash(curl https://malicious*)",
+      "Bash(wget https://malicious*)",
+      "Bash(sudo *)",
+      "Bash(rm -rf /)",
+      "Bash(dd *)",
+      "Read(./.env)",
+      "Read(./.env.local)",
+      "Read(./.env.*.local)",
+      "Read(./secrets)",
+      "Read(./secrets/**)",
+      "Read(~/.aws/**)",
+      "Read(~/.ssh/**)",
+      "Write(./.env)",
+      "Write(./.env.local)",
+      "Write(./production.config.*)"
+    ]
+  },
+
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write(*.ts)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write $file 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "npx eslint --fix $file 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Write(*.tsx)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write $file 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "npx eslint --fix $file 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Write(*.jsx)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write $file 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "npx eslint --fix $file 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Write(*.json)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write $file 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Write(*.py)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "black $file 2>/dev/null || true"
+          },
+          {
+            "type": "command",
+            "command": "isort $file 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(npm install)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm audit --production 2>/dev/null || true"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash(npm test)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npm run coverage 2>/dev/null || npm test"
+          }
+        ]
+      }
+    ]
+  },
+
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "DISABLE_TELEMETRY": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "1",
+    "NODE_ENV": "development",
+    "FORCE_COLOR": "1"
+  },
+
+  "gitConfig": {
+    "coAuthoredBy": true,
+    "commitMessage": "Claude Code: {action}"
+  },
+
+  "ui": {
+    "theme": "dark",
+    "statusLine": {
+      "format": "Model: {model} | Ctx: {contextUsage} | Cost: {costEstimate}"
+    },
+    "loadingVerbs": [
+      "analyzing",
+      "crafting",
+      "architecting",
+      "synthesizing",
+      "orchestrating",
+      "refining",
+      "optimizing"
+    ]
+  },
+
+  "autoSave": true,
+  "autoFormat": true,
+  "autoTest": false,
+  "autoUpdates": true,
+
+  "planMode": {
+    "enabled": true,
+    "autoApprove": false,
+    "verbose": true
+  },
+
+  "taskMode": {
+    "enabled": true,
+    "autoCreate": true
+  },
+
+  "mcp_servers": {
+    "web_search": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-web-search"]
+    },
+    "github": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "npm": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-npm"]
+    }
+  },
+
+  "knownMarketplaces": {
+    "anthropic": {
+      "source": "github",
+      "repo": "anthropics/claude-code-plugins"
+    }
+  },
+
+  "enabledPlugins": {
+    "code-formatter@anthropic": true,
+    "test-runner@anthropic": true
+  }
+}
