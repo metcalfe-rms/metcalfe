@@ -28,7 +28,7 @@ export default async function TeamPage({ searchParams }: TeamPageProps) {
   const banner = getBanner(resolvedSearchParams);
 
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Team & permission management process"
         title="Manage people, permissions, and request flow without losing context."
@@ -56,7 +56,7 @@ export default async function TeamPage({ searchParams }: TeamPageProps) {
         </Card>
       ) : null}
 
-      <section className="grid gap-6 xl:grid-cols-[1.45fr_0.95fr]">
+      <section className="grid gap-8 xl:grid-cols-[1.45fr_0.95fr]">
         <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
           <CardHeader>
             <CardTitle className="text-2xl">Current team roster</CardTitle>
@@ -80,7 +80,7 @@ export default async function TeamPage({ searchParams }: TeamPageProps) {
           </CardContent>
         </Card>
 
-        <div className="space-y-6">
+        <div className="space-y-7">
           <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
             <CardHeader>
               <CardTitle className="text-2xl">Quick team actions</CardTitle>
@@ -134,4 +134,3 @@ export default async function TeamPage({ searchParams }: TeamPageProps) {
     </div>
   );
 }
-

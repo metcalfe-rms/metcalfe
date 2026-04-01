@@ -20,26 +20,26 @@ export function PageHero({
   return (
     <section
       className={cn(
-        "overflow-hidden rounded-[2rem] border border-slate-200 bg-[linear-gradient(135deg,#0f3d74_0%,#194d83_45%,#f2f6fb_45%,#ffffff_100%)] p-6 text-white shadow-sm md:p-8",
+        "overflow-hidden rounded-[2rem] border border-slate-200 bg-[linear-gradient(135deg,#0f3d74_0%,#194d83_45%,#f2f6fb_45%,#ffffff_100%)] p-6 text-white shadow-sm md:p-8 xl:p-10",
         className,
       )}
     >
-      <div className="grid gap-6 lg:grid-cols-[1.4fr_0.8fr]">
-        <div className="space-y-4">
+      <div className="grid gap-8 lg:grid-cols-[1.4fr_0.8fr]">
+        <div className="space-y-5">
           {eyebrow ? (
             <p className="text-xs font-semibold tracking-[0.28em] text-sky-100 uppercase">{eyebrow}</p>
           ) : null}
-          <div className="space-y-3">
+          <div className="space-y-4">
             <h1 className="max-w-2xl text-3xl font-semibold tracking-tight md:text-4xl">{title}</h1>
             <p className="max-w-2xl text-sm text-sky-100 md:text-base">{description}</p>
           </div>
-          {actions ? <div className="flex flex-wrap gap-3">{actions}</div> : null}
+          {actions ? <div className="flex flex-wrap gap-4">{actions}</div> : null}
         </div>
 
         {meta?.length ? (
-          <div className="grid gap-3 rounded-[1.5rem] border border-white/15 bg-white/10 p-4 backdrop-blur">
+          <div className="grid gap-4 rounded-[1.5rem] border border-white/15 bg-white/10 p-5 backdrop-blur md:p-6">
             {meta.map((item) => (
-              <div key={item.label} className="rounded-2xl bg-white/10 px-4 py-3">
+              <div key={item.label} className="rounded-2xl bg-white/10 px-4 py-4">
                 <p className="text-xs font-medium uppercase tracking-wide text-sky-100">{item.label}</p>
                 <p className="mt-1 text-lg font-semibold">{item.value}</p>
               </div>
@@ -50,4 +50,3 @@ export function PageHero({
     </section>
   );
 }
-

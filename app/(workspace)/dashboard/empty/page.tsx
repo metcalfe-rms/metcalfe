@@ -8,7 +8,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function EmptyDashboardPage() {
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Empty dashboard"
         title="No live projects yet. The workspace is ready when you are."
@@ -26,8 +26,8 @@ export default function EmptyDashboardPage() {
       />
 
       <Card className="rounded-[1.75rem] border-dashed border-slate-300 bg-white/95">
-        <CardContent className="space-y-5 p-8 text-center">
-          <div className="mx-auto max-w-2xl space-y-3">
+        <CardContent className="space-y-6 p-8 text-center md:p-10">
+          <div className="mx-auto max-w-2xl space-y-4">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Start by opening one of the guided routes below.</h2>
             <p className="text-sm leading-6 text-muted-foreground">
               The dashboard stays lightweight until you either create a monitored build, receive an invite, or submit an admin join request.
@@ -60,4 +60,3 @@ export default function EmptyDashboardPage() {
     </div>
   );
 }
-

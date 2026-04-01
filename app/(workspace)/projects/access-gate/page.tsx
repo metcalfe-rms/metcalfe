@@ -8,7 +8,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function ProjectAccessGatePage() {
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Project access gate"
         title="Choose how you want to enter the workspace."
@@ -60,7 +60,7 @@ export default function ProjectAccessGatePage() {
         <CardHeader>
           <CardTitle className="text-2xl">Before you continue</CardTitle>
         </CardHeader>
-        <CardContent className="grid gap-4 lg:grid-cols-3">
+        <CardContent className="grid gap-5 lg:grid-cols-3">
           {[
             "Confirm your account verification level and role permissions.",
             "Review system readiness if you plan to add hardware or security alerts.",
@@ -78,4 +78,3 @@ export default function ProjectAccessGatePage() {
     </div>
   );
 }
-

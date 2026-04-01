@@ -35,7 +35,7 @@ export default async function ProjectActionPage({
 
   if (action === "options") {
     return (
-      <div className="space-y-6">
+      <div className="workspace-page">
         <PageHero
           eyebrow="More options process"
           title={`${project.name} project options`}
@@ -68,7 +68,7 @@ export default async function ProjectActionPage({
         ) : null}
 
         <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
-          <CardContent className="grid gap-4 p-6 md:grid-cols-3">
+          <CardContent className="grid gap-5 p-6 md:grid-cols-3">
             <div className="rounded-[1.5rem] border border-slate-200 bg-slate-50 p-4">
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">Location</p>
               <p className="mt-2 text-lg font-semibold text-slate-900">{project.location}</p>
@@ -99,7 +99,7 @@ export default async function ProjectActionPage({
 
   if (action === "edit") {
     return (
-      <div className="space-y-6">
+      <div className="workspace-page">
         <PageHero
           eyebrow="Edit project"
           title={`Edit ${project.name}`}
@@ -131,7 +131,7 @@ export default async function ProjectActionPage({
 
   if (action === "update") {
     return (
-      <div className="space-y-6">
+      <div className="workspace-page">
         <PageHero
           eyebrow="Update project"
           title={`Post an operating update for ${project.name}`}
@@ -157,7 +157,7 @@ export default async function ProjectActionPage({
   }
 
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Delete project"
         title={`Delete ${project.name}?`}

@@ -13,7 +13,7 @@ type StatCardProps = {
 export function StatCard({ label, value, detail, href }: StatCardProps) {
   const content = (
     <Card className="h-full rounded-[1.75rem] border-slate-200 bg-white/95">
-      <CardContent className="space-y-3 p-5">
+      <CardContent className="space-y-4 p-6">
         <div className="flex items-start justify-between gap-3">
           <p className="text-sm font-medium text-muted-foreground">{label}</p>
           {href ? <ArrowUpRight className="size-4 text-muted-foreground" /> : null}
@@ -30,4 +30,3 @@ export function StatCard({ label, value, detail, href }: StatCardProps) {
 
   return <Link href={href}>{content}</Link>;
 }
-

@@ -20,14 +20,14 @@ type ActionGridProps = {
 
 export function ActionGrid({ items, className }: ActionGridProps) {
   return (
-    <div className={cn("grid gap-4 md:grid-cols-2", className)}>
+    <div className={cn("grid gap-5 md:grid-cols-2 lg:gap-6", className)}>
       {items.map((item) => {
         const Icon = item.icon;
 
         return (
           <Link key={item.href} href={item.href}>
             <Card className="h-full rounded-[1.75rem] border-slate-200 bg-white/95 transition hover:-translate-y-0.5 hover:border-slate-300">
-              <CardContent className="space-y-4 p-5">
+              <CardContent className="space-y-5 p-6">
                 <div className="flex items-start justify-between gap-3">
                   <span className="inline-flex size-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-700">
                     <Icon className="size-5" />
@@ -54,4 +54,3 @@ export function ActionGrid({ items, className }: ActionGridProps) {
     </div>
   );
 }
-

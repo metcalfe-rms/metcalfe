@@ -20,18 +20,18 @@ export default function LoginPageView({ notice }: LoginPageViewProps) {
       badge="REC - CAM-08"
     >
       <Card className="w-full max-w-md border-none">
-        <CardHeader className="space-y-2 px-0">
+        <CardHeader className="space-y-3 px-0">
           <CardTitle>Welcome back</CardTitle>
           <CardDescription>Access your construction dashboard and live feeds.</CardDescription>
         </CardHeader>
-        <CardContent className="space-y-5 px-0">
+        <CardContent className="space-y-6 px-0">
           {notice ? (
             <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-medium text-emerald-800">
               {notice}
             </div>
           ) : null}
 
-          <form action="/2fa" className="space-y-5">
+          <form action="/2fa" className="space-y-6">
             <div className="space-y-2">
               <Label htmlFor="email">Work Email</Label>
               <Input id="email" type="email" placeholder="name@company.com" />
@@ -57,7 +57,7 @@ export default function LoginPageView({ notice }: LoginPageViewProps) {
             </Button>
           </form>
 
-          <div className="space-y-4">
+          <div className="space-y-5">
             <div className="flex items-center gap-3">
               <Separator className="flex-1" />
               <span className="text-xs font-medium tracking-wide text-muted-foreground uppercase">

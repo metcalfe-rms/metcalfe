@@ -7,7 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function LogoutPage() {
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Logout process"
         title="Log out of the Metcalfe workspace?"

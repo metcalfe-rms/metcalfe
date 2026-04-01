@@ -8,13 +8,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function PasswordResetSuccessfulPage() {
   return (
-    <main className="min-h-screen bg-[#f4f8f4] p-4 md:p-8">
-      <header className="mx-auto mb-12 flex w-full max-w-6xl items-center justify-between rounded-2xl border border-border bg-background px-6 py-4">
+    <main className="auth-page-shell bg-[#f4f8f4]">
+      <header className="auth-page-header">
         <div className="flex items-center gap-2">
           <Image src={MetcalfeLogo} alt="Metcalfe logo" className="h-8 w-8 rounded-md p-1" />
           <p className="text-xl font-semibold">Metcalfe</p>
         </div>
-        <nav className="flex items-center gap-6 text-sm text-muted-foreground">
+        <nav className="flex flex-wrap items-center gap-5 text-sm text-muted-foreground">
           <Link href="/projects/access-gate" className="hover:text-foreground">
             Projects
           </Link>
@@ -27,8 +27,8 @@ export default function PasswordResetSuccessfulPage() {
         </nav>
       </header>
 
-      <div className="mx-auto w-full max-w-lg">
-        <Card className="border-green-200">
+      <div className="mx-auto w-full max-w-xl">
+        <Card className="rounded-[1.75rem] border-green-200 bg-white/95">
           <CardHeader className="items-center text-center">
             <span className="inline-flex size-16 items-center justify-center rounded-full bg-green-100">
               <CheckCircle2 className="size-8 text-green-600" />
@@ -39,7 +39,7 @@ export default function PasswordResetSuccessfulPage() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="space-y-6">
+          <CardContent className="space-y-7">
             <Button asChild className="h-11 w-full rounded-xl bg-green-500 text-white hover:bg-green-600">
               <Link href="/login">Go to Login</Link>
             </Button>

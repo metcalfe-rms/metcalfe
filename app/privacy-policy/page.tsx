@@ -10,7 +10,7 @@ import { privacySections } from "@/lib/metcalfe";
 export default function PrivacyPolicyPage() {
   return (
     <SiteShell>
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 md:px-6 md:py-10">
+      <div className="page-shell">
         <PageHero
           eyebrow="Privacy policy"
           title="Operational privacy guidance for the Metcalfe monitoring workspace."
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
           }
         />
 
-        <section className="grid gap-4 lg:grid-cols-3">
+        <section className="grid gap-5 lg:grid-cols-3 lg:gap-6">
           {privacySections.map((section) => (
             <Card key={section.title} className="rounded-[1.75rem] border-slate-200 bg-white/95">
               <CardHeader>
@@ -41,8 +41,8 @@ export default function PrivacyPolicyPage() {
         </section>
 
         <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
-          <CardContent className="grid gap-4 p-6 lg:grid-cols-[1.1fr_0.9fr]">
-            <div className="space-y-3">
+          <CardContent className="grid gap-5 p-6 md:p-7 lg:grid-cols-[1.1fr_0.9fr]">
+            <div className="space-y-4">
               <div className="flex items-center gap-3">
                 <ShieldCheck className="size-5 text-emerald-600" />
                 <p className="font-semibold text-slate-900">Permission-aware by design</p>

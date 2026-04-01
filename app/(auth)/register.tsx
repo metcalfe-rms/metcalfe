@@ -92,14 +92,14 @@ export default function RegisterPageView() {
         description="Join the world's most trusted construction monitoring platform. Get real-time updates and peace of mind for your remote property investments."
       >
         <Card className="w-full max-w-lg border-none shadow-none">
-          <CardHeader className="space-y-2 px-0">
+          <CardHeader className="space-y-3 px-0">
             <p className="text-xs font-semibold tracking-wide text-primary uppercase">Step 1 of 3</p>
             <CardTitle className="text-2xl">Choose Your Account Type</CardTitle>
             <CardDescription>Select the role that best describes how you will use the Metcalfe platform.</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4 px-0">
-            <fieldset className="space-y-3">
-              <div className="space-y-3">
+          <CardContent className="space-y-6 px-0">
+            <fieldset className="space-y-4">
+              <div className="space-y-4">
                 {accountTypes.map((type) => {
                   const Icon = type.icon;
                   return (
@@ -159,7 +159,7 @@ export default function RegisterPageView() {
               </Link>
             </p>
 
-            <div className="flex items-center justify-center gap-4 pt-2 text-xs text-muted-foreground">
+            <div className="flex items-center justify-center gap-5 pt-3 text-xs text-muted-foreground">
               <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Encrypted</span>
               <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> GDPR Compliant</span>
               <span className="flex items-center gap-1.5"><ShieldCheck className="size-3.5" /> Pro Standard</span>
@@ -177,12 +177,12 @@ export default function RegisterPageView() {
         description="Join the world's most trusted construction monitoring platform."
       >
         <Card className="w-full max-w-lg border-none shadow-none">
-          <CardHeader className="space-y-2 px-0">
+          <CardHeader className="space-y-3 px-0">
             <p className="text-xs font-semibold tracking-wide text-primary uppercase">Step 2 of 3</p>
             <CardTitle className="text-2xl">Create an account</CardTitle>
             <CardDescription>Start monitoring your construction site today.</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-4 px-0">
+          <CardContent className="space-y-6 px-0">
             <div className="space-y-2">
               <Label htmlFor="full-name">Full Name</Label>
               <Input
@@ -290,7 +290,7 @@ export default function RegisterPageView() {
   // Step 3 — 2FA Setup (full-screen, no AuthShell)
   return (
     <main className="min-h-screen bg-background">
-      <header className="flex items-center justify-between border-b border-border px-8 py-5">
+      <header className="auth-page-header flex-wrap rounded-none border-x-0 border-t-0 bg-background">
         <Link href="/login" className="inline-flex items-center gap-3">
           <Image
             src={MetcalfeLogo}
@@ -311,24 +311,24 @@ export default function RegisterPageView() {
         </div>
       </header>
 
-      <div className="mx-auto max-w-5xl px-6 py-10">
-        <div className="mb-8">
+      <div className="mx-auto w-full max-w-6xl px-4 py-8 md:px-6 md:py-10 xl:px-8">
+        <div className="mb-10 space-y-2">
           <h1 className="text-2xl font-bold">2FA & Security Setup</h1>
           <p className="text-muted-foreground">Secure your construction monitoring access.</p>
         </div>
 
-        <div className="grid gap-8 lg:grid-cols-[1fr_300px]">
+        <div className="grid gap-8 xl:grid-cols-[1fr_320px]">
           {/* Left: method + QR/SMS panel */}
-          <div className="space-y-6">
+          <div className="space-y-7">
             {/* Method toggle */}
-            <div className="space-y-3">
+            <div className="space-y-4">
               <p className="text-sm font-medium">Choose your 2FA Method</p>
-              <div className="grid grid-cols-2 gap-3">
+              <div className="grid gap-4 md:grid-cols-2">
                 <button
                   type="button"
                   onClick={() => setTwoFaMethod("app")}
                   className={cn(
-                    "flex flex-col items-center gap-2 rounded-xl border p-4 text-center transition-colors",
+                    "flex flex-col items-center gap-3 rounded-xl border p-5 text-center transition-colors",
                     twoFaMethod === "app"
                       ? "border-primary bg-primary/5"
                       : "border-border hover:border-primary/40"
@@ -346,7 +346,7 @@ export default function RegisterPageView() {
                   type="button"
                   onClick={() => setTwoFaMethod("sms")}
                   className={cn(
-                    "flex flex-col items-center gap-2 rounded-xl border p-4 text-center transition-colors",
+                    "flex flex-col items-center gap-3 rounded-xl border p-5 text-center transition-colors",
                     twoFaMethod === "sms"
                       ? "border-primary bg-primary/5"
                       : "border-border hover:border-primary/40"
@@ -363,14 +363,14 @@ export default function RegisterPageView() {
             </div>
 
             {/* QR / SMS setup panel */}
-            <div className="rounded-xl border border-border p-6 space-y-5">
+            <div className="space-y-6 rounded-xl border border-border p-6 md:p-7">
               {twoFaMethod === "app" ? (
                 <>
                   <h3 className="font-semibold">Scan QR Code</h3>
                   <p className="text-sm text-muted-foreground">
                     Scan this code with your authenticator app. If you can&apos;t scan it, enter the secret key manually:
                   </p>
-                  <div className="flex gap-6 items-start">
+                  <div className="flex flex-col gap-6 xl:flex-row xl:items-start">
                     {/* QR placeholder */}
                     <div className="flex size-36 shrink-0 items-center justify-center rounded-xl bg-muted">
                       <QrCode className="size-16 text-muted-foreground/50" />
@@ -384,7 +384,7 @@ export default function RegisterPageView() {
                       </div>
                       <div className="space-y-1">
                         <p className="text-xs text-muted-foreground uppercase font-semibold tracking-wide">Verification Code</p>
-                        <div className="flex gap-2">
+                        <div className="flex flex-col gap-3 sm:flex-row">
                           <Input placeholder="000 000" className="font-mono tracking-widest" />
                           <Button className="rounded-xl px-5 shadow-none">Verify</Button>
                         </div>
@@ -401,14 +401,14 @@ export default function RegisterPageView() {
                   <div className="space-y-3">
                     <div className="space-y-1">
                       <Label htmlFor="phone">Mobile Number</Label>
-                      <div className="flex gap-2">
+                      <div className="flex flex-col gap-3 sm:flex-row">
                         <Input id="phone" type="tel" placeholder="+1 (555) 000-0000" className="flex-1" />
                         <Button className="rounded-xl px-5 shadow-none">Send Code</Button>
                       </div>
                     </div>
                     <div className="space-y-1">
                       <Label htmlFor="sms-code">Verification Code</Label>
-                      <div className="flex gap-2">
+                      <div className="flex flex-col gap-3 sm:flex-row">
                         <Input id="sms-code" placeholder="000 000" className="font-mono tracking-widest" />
                         <Button className="rounded-xl px-5 shadow-none">Verify</Button>
                       </div>
@@ -420,8 +420,8 @@ export default function RegisterPageView() {
           </div>
 
           {/* Right: recovery codes */}
-          <div className="space-y-4">
-            <div className="rounded-xl border border-border p-5 space-y-4">
+          <div className="space-y-5">
+            <div className="space-y-5 rounded-xl border border-border p-5 md:p-6">
               <div className="space-y-1">
                 <h3 className="font-semibold text-sm">Recovery Codes</h3>
                 <p className="text-xs text-muted-foreground">
@@ -446,7 +446,7 @@ export default function RegisterPageView() {
                 </Button>
               </div>
 
-              <div className="rounded-lg bg-yellow-50 border border-yellow-200 p-3 space-y-1">
+              <div className="space-y-1 rounded-lg border border-yellow-200 bg-yellow-50 p-3">
                 <p className="text-xs font-semibold text-yellow-800">Warning</p>
                 <p className="text-xs text-yellow-700">
                   Recovery codes can only be used once. After using a code, it will be marked as invalid.
@@ -454,7 +454,7 @@ export default function RegisterPageView() {
               </div>
             </div>
 
-            <div className="rounded-xl border border-border p-5 space-y-2">
+            <div className="space-y-3 rounded-xl border border-border p-5 md:p-6">
               <h3 className="text-sm font-semibold">Security Support</h3>
               <p className="text-xs text-muted-foreground">Need help setting up your high-security monitoring access?</p>
               <Link href="/support" className="text-xs font-semibold text-primary hover:underline flex items-center gap-1">
@@ -465,8 +465,8 @@ export default function RegisterPageView() {
         </div>
       </div>
 
-      <div className="sticky bottom-0 border-t border-border bg-background px-8 py-4 flex items-center justify-between">
-        <div className="flex gap-4 text-sm text-muted-foreground">
+      <div className="sticky bottom-0 flex flex-col gap-4 border-t border-border bg-background px-4 py-4 md:px-6 md:py-5 lg:px-8 xl:flex-row xl:items-center xl:justify-between">
+        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
           <button
             type="button"
             onClick={() => router.push("/orientation/welcome")}

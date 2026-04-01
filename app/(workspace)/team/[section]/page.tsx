@@ -25,7 +25,7 @@ export default async function TeamSectionPage({ params }: TeamSectionPageProps) 
 
   if (section === "request-box") {
     return (
-      <div className="space-y-6">
+      <div className="workspace-page">
         <PageHero
           eyebrow="Request box process"
           title="Review access, permission, and hardware requests in one queue."
@@ -66,7 +66,7 @@ export default async function TeamSectionPage({ params }: TeamSectionPageProps) 
 
   if (section === "invite") {
     return (
-      <div className="space-y-6">
+      <div className="workspace-page">
         <PageHero
           eyebrow="Invite team member process"
           title="Send a new team invitation."
@@ -106,7 +106,7 @@ export default async function TeamSectionPage({ params }: TeamSectionPageProps) 
   const removableMember = teamMembers[2];
 
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Remove team member process"
         title={`Remove ${removableMember.name} from the active roster?`}
@@ -139,4 +139,3 @@ export default async function TeamSectionPage({ params }: TeamSectionPageProps) 
     </div>
   );
 }
-

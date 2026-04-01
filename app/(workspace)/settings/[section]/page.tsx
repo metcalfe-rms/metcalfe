@@ -24,7 +24,7 @@ export default async function SettingsSectionPage({ params }: SettingsSectionPag
 
   if (section === "profile") {
     return (
-      <div className="space-y-6">
+      <div className="workspace-page">
         <PageHero
           eyebrow="Profile setting page"
           title="Maintain the operator profile used across the workspace."
@@ -64,7 +64,7 @@ export default async function SettingsSectionPage({ params }: SettingsSectionPag
 
   if (section === "access") {
     return (
-      <div className="space-y-6">
+      <div className="workspace-page">
         <PageHero
           eyebrow="Access & permissions"
           title="Review privacy and permission controls."
@@ -97,7 +97,7 @@ export default async function SettingsSectionPage({ params }: SettingsSectionPag
 
   if (section === "account") {
     return (
-      <div className="space-y-6">
+      <div className="workspace-page">
         <PageHero
           eyebrow="Logout & account actions"
           title="Manage account-level actions from one route."
@@ -140,7 +140,7 @@ export default async function SettingsSectionPage({ params }: SettingsSectionPag
   }
 
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Deactivate process"
         title="Deactivate this account?"
@@ -173,4 +173,3 @@ export default async function SettingsSectionPage({ params }: SettingsSectionPag
     </div>
   );
 }
-

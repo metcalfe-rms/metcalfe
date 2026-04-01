@@ -11,8 +11,8 @@ import { Progress } from "@/components/ui/progress";
 
 export default function ResetPasswordPage() {
   return (
-    <main className="min-h-screen bg-[#f3f5f8] p-4 md:p-8">
-      <header className="mx-auto mb-10 flex w-full max-w-6xl items-center justify-between rounded-2xl border border-border bg-background px-6 py-4">
+    <main className="auth-page-shell bg-[#f3f5f8]">
+      <header className="auth-page-header">
         <div className="flex items-center gap-2">
           <Image src={MetcalfeLogo} alt="Metcalfe logo" className="h-8 w-8 rounded-md p-1" />
           <p className="text-xl font-semibold">Metcalfe</p>
@@ -22,14 +22,14 @@ export default function ResetPasswordPage() {
         </Link>
       </header>
 
-      <div className="mx-auto w-full max-w-md">
-        <Card>
+      <div className="mx-auto w-full max-w-lg">
+        <Card className="rounded-[1.75rem] bg-white/95">
           <CardHeader>
             <CardTitle>Set New Password</CardTitle>
             <CardDescription>Ensure your Metcalfe account stays secure.</CardDescription>
           </CardHeader>
 
-          <CardContent className="space-y-4">
+          <CardContent className="space-y-5">
             <div className="rounded-xl border border-primary/20 bg-primary/5 p-4 text-sm text-muted-foreground">
               <p className="mb-1 flex items-center gap-2 font-semibold text-foreground">
                 <Shield className="size-4 text-primary" />

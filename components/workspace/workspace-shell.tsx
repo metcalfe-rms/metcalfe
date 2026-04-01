@@ -51,8 +51,8 @@ export function WorkspaceShell({ children }: WorkspaceShellProps) {
 
   return (
     <div className="min-h-screen bg-[#edf3f8] text-foreground">
-      <div className="mx-auto flex min-h-screen max-w-[1600px]">
-        <aside className="hidden w-80 flex-col border-r border-slate-200 bg-[linear-gradient(180deg,#0f3d74_0%,#123d69_45%,#102f4f_100%)] px-6 py-7 text-white lg:flex">
+      <div className="flex min-h-screen">
+        <aside className="hidden w-80 shrink-0 flex-col overflow-y-auto border-r border-slate-200 bg-[linear-gradient(180deg,#0f3d74_0%,#123d69_45%,#102f4f_100%)] px-6 py-8 text-white lg:sticky lg:top-0 lg:flex lg:h-screen">
           <Link href="/dashboard" className="inline-flex items-center gap-3">
             <Image
               src={MetcalfeLogoWhite}
@@ -65,15 +65,7 @@ export function WorkspaceShell({ children }: WorkspaceShellProps) {
             </div>
           </Link>
 
-          <div className="mt-8 rounded-[1.5rem] border border-white/10 bg-white/10 p-4">
-            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sky-100">Launch mode</p>
-            <p className="mt-2 text-2xl font-semibold tracking-tight">All critical routes online</p>
-            <p className="mt-2 text-sm text-sky-100">
-              This workspace groups dashboard, onboarding, project flows, team actions, and account controls.
-            </p>
-          </div>
-
-          <nav className="mt-8 space-y-2">
+          <nav className="mt-10 space-y-2">
             {workspacePrimaryNav.map((item) => {
               const Icon = item.icon;
               const active = isActive(pathname, item);
@@ -99,7 +91,7 @@ export function WorkspaceShell({ children }: WorkspaceShellProps) {
             })}
           </nav>
 
-          <div className="mt-auto space-y-2 pt-8">
+          <div className="mt-auto space-y-2 pt-10">
             {workspaceSecondaryNav.map((item) => {
               const Icon = item.icon;
               const active = isActive(pathname, item);
@@ -123,8 +115,8 @@ export function WorkspaceShell({ children }: WorkspaceShellProps) {
 
         <div className="flex min-w-0 flex-1 flex-col">
           <header className="sticky top-0 z-20 border-b border-slate-200 bg-[#edf3f8]/95 backdrop-blur">
-            <div className="flex flex-col gap-4 px-4 py-4 md:px-6 lg:px-8">
-              <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
+            <div className="flex flex-col gap-5 px-4 py-5 md:px-6 lg:px-8">
+              <div className="flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
                 <div className="space-y-2">
                   <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">
                     Workspace navigation
@@ -149,7 +141,7 @@ export function WorkspaceShell({ children }: WorkspaceShellProps) {
                 </div>
 
                 <div className="flex flex-wrap items-center gap-3">
-                  <div className="flex min-w-[220px] items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm text-muted-foreground">
+                  <div className="flex min-w-[240px] items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2.5 text-sm text-muted-foreground">
                     <Search className="size-4" />
                     <span>Search routes, projects, or cameras</span>
                   </div>
@@ -190,7 +182,7 @@ export function WorkspaceShell({ children }: WorkspaceShellProps) {
             </div>
           </header>
 
-          <main className="flex-1 px-4 py-5 md:px-6 md:py-6 lg:px-8 lg:py-8">{children}</main>
+          <main className="flex-1 px-4 py-6 md:px-6 md:py-7 lg:px-8 lg:py-8 xl:px-10">{children}</main>
         </div>
       </div>
     </div>

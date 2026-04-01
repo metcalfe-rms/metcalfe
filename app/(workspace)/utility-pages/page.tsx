@@ -7,14 +7,14 @@ import { utilityLinks } from "@/lib/metcalfe";
 
 export default function UtilityPagesPage() {
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Utility pages"
         title="Grouped utility and redundant pages now have a single clear home."
         description="Instead of scattering loosely defined pages across the app, this hub collects common support, empty-state, and request utilities in one place."
       />
 
-      <div className="grid gap-4 lg:grid-cols-2">
+      <div className="grid gap-5 lg:grid-cols-2 lg:gap-6">
         {utilityLinks.map((item) => (
           <Link key={item.href} href={item.href}>
             <Card className="h-full rounded-[1.75rem] border-slate-200 bg-white/95 transition hover:-translate-y-0.5 hover:border-slate-300">
@@ -32,7 +32,7 @@ export default function UtilityPagesPage() {
         ))}
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
+      <div className="grid gap-5 md:grid-cols-2 lg:gap-6">
         <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
           <CardContent className="space-y-3 p-5">
             <div className="flex items-center gap-3">

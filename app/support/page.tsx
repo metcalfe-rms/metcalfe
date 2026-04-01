@@ -10,7 +10,7 @@ import { supportChannels } from "@/lib/metcalfe";
 export default function SupportPage() {
   return (
     <SiteShell>
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 md:px-6 md:py-10">
+      <div className="page-shell">
         <PageHero
           eyebrow="Support"
           title="Support routes for onboarding, access, readiness, and mission blockers."
@@ -27,13 +27,13 @@ export default function SupportPage() {
           }
         />
 
-        <section className="grid gap-4 lg:grid-cols-3">
+        <section className="grid gap-5 lg:grid-cols-3 lg:gap-6">
           {supportChannels.map((channel) => (
             <Card key={channel.title} className="rounded-[1.75rem] border-slate-200 bg-white/95">
               <CardHeader>
                 <CardTitle className="text-2xl">{channel.title}</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-5">
                 <p className="text-sm leading-6 text-muted-foreground">{channel.description}</p>
                 <div className="rounded-2xl bg-slate-50 px-4 py-3 text-sm text-slate-700">{channel.hours}</div>
                 <Button asChild variant="outline" className="rounded-full border-slate-200 bg-white shadow-none">
@@ -48,19 +48,19 @@ export default function SupportPage() {
         </section>
 
         <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
-          <CardContent className="grid gap-4 p-6 lg:grid-cols-2">
-            <div className="rounded-[1.5rem] bg-slate-50 p-5">
+          <CardContent className="grid gap-5 p-6 md:p-7 lg:grid-cols-2">
+            <div className="rounded-[1.5rem] bg-slate-50 p-6">
               <div className="flex items-center gap-3">
                 <ShieldCheck className="size-5 text-emerald-600" />
                 <p className="font-semibold text-slate-900">Common unblockers</p>
               </div>
-              <div className="mt-4 space-y-2 text-sm text-muted-foreground">
+              <div className="mt-5 space-y-3 text-sm text-muted-foreground">
                 <p>Login and two-factor issues route back to the auth pages cleanly.</p>
                 <p>Join requests and admin escalations connect to project access workflows.</p>
                 <p>Privacy and permission concerns link directly into the access settings page.</p>
               </div>
             </div>
-            <div className="rounded-[1.5rem] bg-[#0f3d74] p-5 text-white">
+            <div className="rounded-[1.5rem] bg-[#0f3d74] p-6 text-white">
               <div className="flex items-center gap-3">
                 <LifeBuoy className="size-5" />
                 <p className="font-semibold">Need the policy view instead?</p>
@@ -78,4 +78,3 @@ export default function SupportPage() {
     </SiteShell>
   );
 }
-

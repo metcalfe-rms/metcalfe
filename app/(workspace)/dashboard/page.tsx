@@ -38,7 +38,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
   const banner = getBanner(resolvedSearchParams);
 
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Website dashboard"
         title="Monitor projects, unblock teams, and keep every workflow moving."
@@ -69,13 +69,13 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
         </Card>
       ) : null}
 
-      <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <section className="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
         {dashboardStats.map((item) => (
           <StatCard key={item.label} {...item} />
         ))}
       </section>
 
-      <section className="grid gap-6 xl:grid-cols-[1.45fr_0.95fr]">
+      <section className="grid gap-8 xl:grid-cols-[1.45fr_0.95fr]">
         <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
           <CardHeader className="flex flex-row items-center justify-between gap-4">
             <div className="space-y-1">
@@ -133,7 +133,7 @@ export default async function DashboardPage({ searchParams }: DashboardPageProps
           </CardContent>
         </Card>
 
-        <div className="space-y-6">
+        <div className="space-y-7">
           <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
             <CardHeader>
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Quick actions</p>

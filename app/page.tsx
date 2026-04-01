@@ -68,7 +68,7 @@ const landingActions = [
 export default function HomePage() {
   return (
     <SiteShell>
-      <div className="mx-auto flex max-w-7xl flex-col gap-8 px-4 py-8 md:px-6 md:py-10">
+      <div className="page-shell">
         <PageHero
           eyebrow="Metcalfe platform"
           title="Construction monitoring, access control, and project workflows that actually connect."
@@ -99,15 +99,15 @@ export default function HomePage() {
           ]}
         />
 
-        <section className="grid gap-4 md:grid-cols-3">
+        <section className="grid gap-5 md:grid-cols-3 lg:gap-6">
           {landingStats.map((item) => (
             <StatCard key={item.label} label={item.label} value={item.value} detail={item.detail} />
           ))}
         </section>
 
-        <section className="grid gap-6 xl:grid-cols-[1.45fr_0.95fr]">
-          <div className="space-y-4">
-            <div className="space-y-2">
+        <section className="grid gap-8 xl:grid-cols-[1.45fr_0.95fr]">
+          <div className="space-y-5">
+            <div className="space-y-3">
               <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">Linked experiences</p>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Every major route now has a destination and a next step.</h2>
             </div>
@@ -115,8 +115,8 @@ export default function HomePage() {
           </div>
 
           <Card className="rounded-[1.75rem] border-slate-200 bg-white/95">
-            <CardContent className="space-y-5 p-6">
-              <div className="space-y-2">
+            <CardContent className="space-y-6 p-6 md:p-7">
+              <div className="space-y-3">
                 <p className="text-xs font-semibold uppercase tracking-[0.24em] text-slate-500">What changed</p>
                 <h3 className="text-xl font-semibold tracking-tight">From splash screen to working workflow map</h3>
                 <p className="text-sm leading-6 text-muted-foreground">
@@ -124,7 +124,7 @@ export default function HomePage() {
                 </p>
               </div>
 
-              <div className="grid gap-3">
+              <div className="grid gap-4">
                 {[
                   "Role-based account verification and orientation pages",
                   "Project access gate plus create, join, and admin request flows",
@@ -141,7 +141,7 @@ export default function HomePage() {
                 ))}
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-4">
                 <Button asChild className="rounded-full">
                   <Link href="/projects/access-gate">Open access gate</Link>
                 </Button>
@@ -156,4 +156,3 @@ export default function HomePage() {
     </SiteShell>
   );
 }
-

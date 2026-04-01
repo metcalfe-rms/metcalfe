@@ -5,7 +5,7 @@ import { missionCards } from "@/lib/metcalfe";
 
 export default function MissionsPage() {
   return (
-    <div className="space-y-6">
+    <div className="workspace-page">
       <PageHero
         eyebrow="Mission pages"
         title="Operational missions group the platform’s bigger workflows into a simple hub."
@@ -23,7 +23,7 @@ export default function MissionsPage() {
         <CardHeader>
           <CardTitle className="text-2xl">How to use this hub</CardTitle>
         </CardHeader>
-        <CardContent className="grid gap-4 md:grid-cols-3">
+        <CardContent className="grid gap-5 md:grid-cols-3">
           {[
             "Start here when the user describes a goal rather than a page name.",
             "Each mission card lands on a route-backed process instead of a placeholder.",
@@ -38,4 +38,3 @@ export default function MissionsPage() {
     </div>
   );
 }
-
